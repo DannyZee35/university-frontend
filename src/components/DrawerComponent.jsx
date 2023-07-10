@@ -81,7 +81,12 @@ export const DrawerComponent = () => {
       visible: user?.UserRole === "head of department",
       icon:  <DashboardRoundedIcon/>
     },
-
+    {
+      title: "Manage",
+      to: "/manage",
+      visible: user?.UserRole === "head of department",
+      icon:  <DashboardRoundedIcon/>
+    },
     {
       title: "Rejected Courses",
       to: "/HodRejected",
@@ -92,13 +97,13 @@ export const DrawerComponent = () => {
     {
       title: "Dashboard",
       to: "/folder-dashboard",
-      visible: user?.UserRole === "course folder coordinator",
+      visible: user?.UserRole === "course folder convenor",
       icon:  <DashboardRoundedIcon/>
     },
     {
       title: "Rejected Courses",
       to: "/folder-rejected",
-      visible: user?.UserRole === "course folder coordinator",
+      visible: user?.UserRole === "course folder convenor",
       icon:  <CancelRoundedIcon/>
     },
   ];

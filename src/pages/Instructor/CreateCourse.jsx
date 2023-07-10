@@ -2,13 +2,14 @@ import {
   Container,
   Stack,
   Typography,
-  TextField,
+  TextField,Box,
   Button, CircularProgress
 } from "@mui/material";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux"
 import { create_Course } from "../../features/courses/courseSlice";
 const { URL } = window;
+import criteria from "../../assets/sample criteria.png"
 
 
 const drawerWidth = 10;
@@ -140,7 +141,7 @@ export const CreateCourse = () => {
 
     await dispatch(create_Course(dataCourses));
 
-    {/*SetCourseForm({
+     SetCourseForm({
       courseTitle: "",
       courseCode: "",
       Section_no: "",
@@ -174,7 +175,7 @@ export const CreateCourse = () => {
       Course_Result: "",
       CLO_Assesment: "",
       ReviewReport: ""
-    })*/}
+    })  
   }
 
   const handleSubmit = async (e) => {
@@ -361,7 +362,12 @@ export const CreateCourse = () => {
               onChange={handleChange}
             />
 
-          
+          <Box>
+          <Typography sx={{ color: "black" }} variant="h5">
+              Sample Criteria
+            </Typography>
+            <img  src={criteria} height={300} width={400}/>
+          </Box>
 
             <Stack direction="row"
               justifyContent="flex-start"

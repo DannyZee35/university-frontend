@@ -12,7 +12,7 @@ const create_Course = async (courseData, token) => {
 
   try {
     const response = await axios.post(
-      "https://university-backend.vercel.app/create-course",
+      "https://final-backend-ten.vercel.app/create-course",
       courseData,
       config
     );
@@ -36,7 +36,7 @@ const getCourses = async (token) => {
   
     try {
       const response = await axios.get(
-        "https://university-backend.vercel.app/courses",
+        "https://final-backend-ten.vercel.app/courses",
         config
       );
       return response.data;
@@ -58,7 +58,7 @@ const getCourses = async (token) => {
 
     try {
       const response = await axios.put(
-        `https://university-backend.vercel.app/feedback/${courseID}`,
+        `https://final-backend-ten.vercel.app/${courseID}`,
         courseData,
         config
       )
@@ -78,7 +78,7 @@ const getCourses = async (token) => {
       },
     }
   
-    const response = await axios.get(`https://university-backend.vercel.app/courses/${courseID}`, config)
+    const response = await axios.get(`https://final-backend-ten.vercel.app/courses/${courseID}`, config)
   
     return response.data
   }
@@ -87,7 +87,7 @@ const getCourses = async (token) => {
  
   export const updateHodFeedback = async (id, updatedHodFeedbackData, token) => {
     try {
-      const response = await axios.put(`https://university-backend.vercel.app/HodFeedback/${id}`, updatedHodFeedbackData, {
+      const response = await axios.put(`https://final-backend-ten.vercel.app/HodFeedback/${id}`, updatedHodFeedbackData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -100,7 +100,7 @@ const getCourses = async (token) => {
   
   export const updateFolderFeedback = async (id, updatedFolderFeedbackData, token) => {
     try {
-      const response = await axios.put(`https://university-backend.vercel.app/FolderFeedback/${id}`, updatedFolderFeedbackData, {
+      const response = await axios.put(`https://final-backend-ten.vercel.app/FolderFeedback/${id}`, updatedFolderFeedbackData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -115,7 +115,7 @@ const getCourses = async (token) => {
   const addLogToCourse = async (id, logData, token) => {
     try {
       const response = await axios.post(
-        `https://university-backend.vercel.app/courses/${id}/logs`,
+        `https://final-backend-ten.vercel.app/courses/${id}/logs`,
         logData,
         {
           headers: {
@@ -137,7 +137,7 @@ const getCourses = async (token) => {
     },
   }
 
-  const response = await axios.get(`https://university-backend.vercel.app/courses/${id}/logs`, config)
+  const response = await axios.get(`https://final-backend-ten.vercel.app/courses/${id}/logs`, config)
 
   return response.data.logs;
 }

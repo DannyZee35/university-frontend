@@ -567,7 +567,7 @@ export const FolderDetails = () => {
                   {!isEditing && (
                     <>
                       <Typography variant="subtitle1" sx={{ fontSize: "18px", mt: 2 }} gutterBottom>
-                        <strong>Course Folder Coordinator Feedback</strong>
+                        <strong>Course Folder Convenor Feedback</strong>
                       </Typography>
                       <Typography variant="subtitle1" sx={{ fontSize: "18px", mt: 2 }} gutterBottom>
                         {singleCourse.FolderCoordinatorFeedback}
@@ -591,7 +591,7 @@ export const FolderDetails = () => {
                   {isEditing && (
                     <form onSubmit={handleSubmit}>
                       <Typography variant="subtitle1" sx={{ fontSize: "18px", mt: 2, mb: 3 }} gutterBottom>
-                        <strong>Course Folder Coordinator Feedback</strong>
+                        <strong>Course Folder Convenor Feedback</strong>
                       </Typography>
                       <TextField multiline rows={5} label="Feedback" fullWidth value={folderCoordinatorFeedback} onChange={(e) => setFolderCoordinatorFeedback(e.target.value)} />
                       <Stack direction={"row"} alignItems={"center"} justifyContent={"flex-start"} gap="20px" sx={{ mt: 3 }}>

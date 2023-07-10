@@ -20,9 +20,9 @@ export const withAuth = (Component, allowedRoles) => {
       else if (user.UserRole === "course coordinator" && !allowedRoles.includes("course coordinator")) {
         navigate("/dashboard");
       } else if (user.UserRole === "head of department" && !allowedRoles.includes("head of department")) {
-        navigate("/hod-dashboard");
+        navigate("/hod-dashboard");convenor
       }
-       else if (user.UserRole === "course folder coordinator" && !allowedRoles.includes("course folder coordinator")) {
+       else if (user.UserRole === "course folder coordinator" && !allowedRoles.includes("course folder convenor")) {
         navigate("/folder-dashboard");
       }
     }, [user, allowedRoles, navigate]);

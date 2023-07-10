@@ -70,7 +70,7 @@ export const FolderConvenier=()=>{
           password,
         };
         const response = await axios.post(
-          "https://university-backend.vercel.app/login",
+          "https://final-backend-ten.vercel.app/login",
           userData
         );
         const { token, user } = response.data;
@@ -145,7 +145,7 @@ export const FolderConvenier=()=>{
         >
           <img src={custLogo} height={200} width={200}/>
           <Typography variant="h4" color={"primary"}>
-          Course Folder Coordinator
+          Course Folder Convenor
           </Typography>
           <TextField
             label="Username"

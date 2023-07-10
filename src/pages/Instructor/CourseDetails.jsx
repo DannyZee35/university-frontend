@@ -64,10 +64,19 @@ export const CourseDetails = () => {
     setLogData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(addLogToCourse({ id, logData }));
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+  dispatch(addLogToCourse({ id, logData }));
+
+  // Clear the text fields
+  setLogData({
+    lectureNo: '',
+    Date: '',
+    Duration: '',
+    Topics_Covered: '',
+    instruments: '',
+  });
+};
 
 
   if (isLoading) {
@@ -671,7 +680,7 @@ export const CourseDetails = () => {
                       sx={{ fontSize: "18px", mt: 2 }}
                       gutterBottom
                     >
-                      <strong>Course Folder Coordinator Feedback</strong>
+                      <strong>Course Folder Convenor Feedback</strong>
                     </Typography>
                     <Typography
                       variant="subtitle1"

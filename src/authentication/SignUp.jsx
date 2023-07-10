@@ -60,8 +60,8 @@ export const SignUp=()=>{
 
         }
     
-        if (isSuccess || user) {
-          navigate('/')
+        if (isSuccess) {
+          navigate('/login')
         }
     
         dispatch(reset())
@@ -87,19 +87,19 @@ export const SignUp=()=>{
         if (isSuccess && role) {
           switch (role) {
             case "course instructor":
-              navigate("/InstDashboard");
+              navigate("/login");
               break;
             case "course coordinator":
-              navigate("/dashboard");
+              navigate("/login");
               break;
             case "head of department":
-              navigate("/hod-dashboard");
+              navigate("/login");
               break;
-            case "course folder coordinator":
-              navigate("/folder-dashboard");
+            case "course folder convenor":
+              navigate("/login");
               break;
             default:
-              navigate("/");
+              navigate("/login");
               break;
           }
         }
@@ -188,15 +188,11 @@ export const SignUp=()=>{
                   control={<Radio />}
                   label="Course Coordinator"
                 />
+               
                 <FormControlLabel
-                  value="head of department"
+                  value="course folder convenor"
                   control={<Radio />}
-                  label="Head of Department"
-                />
-                <FormControlLabel
-                  value="course folder coordinator"
-                  control={<Radio />}
-                  label="Course Folder Coordinator"
+                  label="Course Folder Convenor"
                 />
               </RadioGroup>
             </FormControl>

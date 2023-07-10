@@ -32,7 +32,7 @@ const navigate=useNavigate()
 
         </Box>
         <Box>
-        <CardComponent  title={"Course Folder Coordinator"} image={folder} onClick={(e)=>navigate('/folderCoordinator')}/>
+        <CardComponent  title={"Course Folder Convenor"} image={folder} onClick={(e)=>navigate('/folderCoordinator')}/>
 
 
         </Box>

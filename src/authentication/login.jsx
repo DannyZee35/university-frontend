@@ -34,25 +34,25 @@ export const Login = () => {
     (state) => state.auth
   );
   const [showPassword, setShowPassword] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-    const handleClickShowPassword = () => setShowPassword((show) => !show);
-  
-    const handleMouseDownPassword = (event) => {
-      event.preventDefault();
-    }
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  }
   useEffect(() => {
     if (isError) {
-      console.log(message);
+      setErrorMessage(error.response.data);
+
     }
 
     if (isSuccess || user) {
       navigate("/InstDashboard");
-    }
+        }
 
     dispatch(reset());
   });
-
   const handleSubmit = async (e) => {
     e.preventDefault(); // prevent default form submission behavior
 
@@ -62,7 +62,7 @@ export const Login = () => {
         password,
       };
       const response = await axios.post(
-        "https://university-backend.vercel.app/login",
+        "https://final-backend-ten.vercel.app/login",
         userData
       );
       const { token, user } = response.data;
@@ -89,7 +89,11 @@ export const Login = () => {
           break;
       }
     } catch (error) {
-      console.log(error);
+      setErrorMessage(error.response.data);
+      console.log(error.message);
+      if (error.response && error.response.status === 400) {
+        console.log(error.response.data);  
+      }
     }
   };
   const CssTextField = styled(TextField)({
@@ -183,7 +187,12 @@ export const Login = () => {
             Sign Up
           </Button>
           </Stack>
-          
+          {errorMessage && (
+   <Alert severity="error"> {errorMessage}</Alert>
+
+   
+ 
+)}
         </Stack>
       </Box>
     </Container>

@@ -35,6 +35,7 @@ import { FolderDashboard } from "./pages/Course Convinier/FolderDashboard";
 import { FolderDetails } from "./pages/Course Convinier/FolderDetails";
 import { FolderRejectedDetails } from "./pages/Course Convinier/FolderRejectedDetails";
 import { CourseLog } from "./pages/Instructor/CourseLog";
+import {Manage} from "./pages/HOD/Manage";
 
 const drawerWidth = 300;
 
@@ -53,10 +54,11 @@ function App() {
   const ProtectedHodDashboard= withAuth(HodDashboard, ["head of department"]);
   const ProtectedHodCourseDetails= withAuth(HodDetailsCourse, ["head of department"]);
   const ProtectedHodRejected= withAuth(HodRejected, ["head of department"]);
-  const ProtectedFolder= withAuth(FolderDashboard, ["course folder coordinator"]);
-  const ProtectedFolderDetails= withAuth(FolderDetails, ["course folder coordinator"]);
-  const ProtectedFolderRejected= withAuth(FolderDetails, ["course folder coordinator"]);
+  const ProtectedFolder= withAuth(FolderDashboard, ["course folder convenor"]);
+  const ProtectedFolderDetails= withAuth(FolderDetails, ["course folder convenor"]);
+  const ProtectedFolderRejected= withAuth(FolderDetails, ["course folder convenor"]);
   const ProtectedCourseLog= withAuth(CourseLog, ["course instructor"]);
+  const ProtectedManage= withAuth(Manage, ["head of department"]);
 
  
   const router = createBrowserRouter(
@@ -75,6 +77,7 @@ function App() {
         <Route path="/hod-dashboard" element={<ProtectedHodDashboard />} />
         <Route path="/hod-details/:id" element={<ProtectedHodCourseDetails />} />
         <Route path="/log" element={<ProtectedCourseLog />} />
+        <Route path="/manage" element={<ProtectedManage />} />
 
         
         <Route path="/dashboard" element={<ProtectedCoordinator />} />

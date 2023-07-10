@@ -619,7 +619,7 @@ import {
     sx={{ fontSize: "18px", mt: 2 }}
     gutterBottom
   >
-    <strong>Course Folder Coordinator Feedback</strong>
+    <strong>Course Folder Convenor Feedback</strong>
   </Typography>
   <Typography
     variant="subtitle1"

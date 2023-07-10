@@ -11,16 +11,21 @@ const drawerWidth = 300;
 export const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+ 
+
   const { user } = useSelector((state) => state.auth);
   const onLogout = () => {
     dispatch(logout());
     dispatch(reset());
     navigate("/");
   };
+  const token = JSON.parse(localStorage.getItem("token"));
+  const username = token?.user?.username; 
 
   const handleLogin=()=>{
     navigate("/login");
   }
+ 
   return (
     <>
       <AppBar color="primary" position="fixed" component={'nav'} sx={{
@@ -40,6 +45,10 @@ export const Navbar = () => {
             gap:'20px'
          }}
           >
+             <Typography>
+                Name: 
+            </Typography>
+            <Typography sx={{textTransform:'uppercase',color:'white', fontWeight:'bold'}} >{username} </Typography> 
             <Typography>
                 Status: 
             </Typography>

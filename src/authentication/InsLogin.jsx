@@ -66,7 +66,7 @@ export const InsLogin=()=>{
           password,
         };
         const response = await axios.post(
-          "https://university-backend.vercel.app/login",
+          "https://final-backend-ten.vercel.app/login",
           userData
         );
         const { token, user } = response.data;
